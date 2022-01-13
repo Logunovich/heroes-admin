@@ -1,0 +1,51 @@
+{
+  "heroes": [
+    {
+      "id": "b557c7c0-b89c-4a68-a2c6-3b9a3de6c5e1",
+      "name": "выфавфывыфа",
+      "description": "ыфваыфваывфа",
+      "element": "earth"
+    },
+    {
+      "id": "b54f5392-15a4-4bad-8b52-8520c6de345c",
+      "name": "Огонь! ",
+      "description": "Жечь города",
+      "element": "fire"
+    },
+    {
+      "id": "dd4c9e02-75bc-4021-88a5-674a1dd58cc4",
+      "description": "ыва",
+      "name": "ыфваыфва",
+      "element": "water"
+    }
+  ],
+  "filters": [
+    {
+      "name": "Все",
+      "value": "all"
+    },
+    {
+      "name": "Огонь",
+      "value": "fire"
+    },
+    {
+      "name": "Вода",
+      "value": "water"
+    },
+    {
+      "name": "Ветер",
+      "value": "wind"
+    },
+    {
+      "name": "Земля",
+      "value": "earth"
+    }
+  ],
+  "filters1": [
+    "all",
+    "fire",
+    "water",
+    "wind",
+    "earth"
+  ]
+}
