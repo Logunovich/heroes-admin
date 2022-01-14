@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useState, useEffect } from 'react';
-import { heroesFetched, heroesFetchingError, addHero } from '../../actions';
-import { useDispatch } from 'react-redux';
+import { addHero, filtersFetched } from '../../actions';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHttp } from '../../hooks/http.hook';
 
 // Задача для этого компонента:
@@ -19,6 +19,7 @@ const HeroesAddForm = () => {
 
     const [hero, setHero] = useState({id: uuidv4()});
     const dispatch = useDispatch();
+    const {filters} = useSelector(state => state);
     const {request} = useHttp();
 
     const updHero = (obj) => {
@@ -34,20 +35,20 @@ const HeroesAddForm = () => {
             dispatch(addHero(hero))
             setHero({id: uuidv4()})
         })
-        .catch(() => dispatch(heroesFetchingError()))
+        .catch(() => console.log('error'))
      }
 
-    const [options, setOptions] = useState([])
 
     useEffect(() => {
         request("http://localhost:3001/filters")
-        .then(data => {
-            setOptions(data)
-        })
-        .catch(() => dispatch(heroesFetchingError()))
+            .then(data => dispatch(filtersFetched(data)))
+            .catch(() => console.log('error'))
+
+        // eslint-disable-next-line
     }, []);
 
-    const optionsItems = options.map((item, id) => {
+
+    const optionsItems = filters.map((item, id) => {
         if (item.value !== 'all') {
             return (
                 <option key={id} value={item.value}>{item.name}</option>

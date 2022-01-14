@@ -1,7 +1,7 @@
 import {useHttp} from '../../hooks/http.hook';
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { heroesFetching, heroesFetched, heroesFetchingError, deleteHero } from '../../actions';
+import { heroesFetching, heroesFetched, heroesFetchingError, deleteHero, filtersFetched } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
 
@@ -16,7 +16,15 @@ const HeroesList = () => {
     const {heroes, heroesLoadingStatus} = useSelector(state => state);
     const dispatch = useDispatch();
     const {request} = useHttp();
+    // console.log(heroes)
 
+    useEffect(() => {
+        request("http://localhost:3001/filters")
+            .then(data => dispatch(filtersFetched(data)))
+            .catch(() => console.log('error'))
+
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(() => {
         dispatch(heroesFetching());
