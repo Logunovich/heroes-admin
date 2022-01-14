@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
+import { changeFilter } from "../../actions";
 
 // Задача для этого компонента:
 // Фильтры должны формироваться на основании загруженных данных
@@ -12,14 +13,16 @@ import { v4 as uuidv4 } from 'uuid';
 
 const HeroesFilters = () => {
 
-    const {filters} = useSelector(state => state);
+    const {filters, activeFilter} = useSelector(state => state);
+    const dispatch = useDispatch();
+    console.log(activeFilter)
 
     const buttons = filters.map(item => {
         return (
             <button 
-                onClick={() => console.log(item.value)}
+                onClick={() => dispatch(changeFilter(item.value))}
                 key={uuidv4()} 
-                className={`btn ${item.className}`}>
+                className={`btn ${item.className} ${item.value === activeFilter ? 'active' : null}`}>
                 {item.name}
             </button>
         )

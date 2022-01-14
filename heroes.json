@@ -1,28 +1,46 @@
 {
   "heroes": [
     {
-      "id": "b557c7c0-b89c-4a68-a2c6-3b9a3de6c5e1",
-      "name": "выфавфывыфа",
-      "description": "ыфваыфваывфа",
-      "element": "earth"
-    },
-    {
-      "id": "0196c91d-3359-46fb-909c-167dd76211aa",
-      "element": "water",
-      "name": "фыва",
-      "description": "фыва"
-    },
-    {
-      "id": "78356228-0c09-49d2-988a-970b0a894034",
-      "name": "Огонь",
-      "description": "Жечь напалмом",
+      "id": "e8e34980-b588-4d79-af22-f233ad473d8e",
+      "name": "Денис",
+      "description": "Я люблю Наташу",
       "element": "fire"
     },
     {
-      "id": "f6192d36-2127-4a35-9afa-e2ad6de80388",
-      "name": "asdf",
-      "description": "sadf",
+      "id": "f1db2b1c-34e1-4a1f-a027-f68204d3165b",
+      "name": "Наташа",
+      "description": "Я умею принимать любовь Дениса на лидцо",
+      "element": "wind"
+    },
+    {
+      "id": "b31da6e9-495a-4f96-ab89-5c9feebd3d5f",
+      "name": "Егор",
+      "description": "Я умею кататься на байке",
       "element": "water"
+    },
+    {
+      "id": "439064d7-cb49-482a-9e9c-581cf3ad6cea",
+      "name": "Кирилл",
+      "description": "Я ничего не умею ",
+      "element": "wind"
+    },
+    {
+      "id": "f4b8900d-d99d-4a72-bfc4-9eb581b5c31e",
+      "name": "Еще имя",
+      "description": "Вообще имя. ",
+      "element": "fire"
+    },
+    {
+      "id": "d0807bab-4750-41fe-b3cf-34747e39a75f",
+      "name": "Еще имя одно",
+      "description": "Пишу код и палю деревья. ",
+      "element": "earth"
+    },
+    {
+      "id": "024fd1f2-9df3-4f26-aafb-4fcf74aacd75",
+      "name": "]ждлждл выа",
+      "description": "ывфа фы",
+      "element": "fire"
     }
   ],
   "filters": [

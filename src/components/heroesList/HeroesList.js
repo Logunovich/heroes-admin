@@ -13,7 +13,7 @@ import Spinner from '../spinner/Spinner';
 // ВСЕ СДЕЛАНО!!!!
 
 const HeroesList = () => {
-    const {heroes, heroesLoadingStatus} = useSelector(state => state);
+    const {filteredHeroes, heroesLoadingStatus} = useSelector(state => state);
     const dispatch = useDispatch();
     const {request} = useHttp();
     // console.log(heroes)
@@ -59,8 +59,9 @@ const HeroesList = () => {
                         onDelete={() => onDelete(id)}/>
         })
     }
-
-    const elements = renderHeroesList(heroes);
+    
+    const elements = renderHeroesList(filteredHeroes);
+    console.log(filteredHeroes)
     return (
         <ul>
             {elements}
