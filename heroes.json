@@ -7,16 +7,22 @@
       "element": "wind"
     },
     {
-      "id": "8dc65d86-69b7-486d-951b-f818465126c6",
-      "name": "ывфаывф",
-      "description": "ыфваывфа",
-      "element": "fire"
-    },
-    {
       "id": "4e92fcb0-164b-4dfb-b6fa-2e2b8b0feb7a",
       "name": "Земля",
       "description": "Земелюшка земля",
       "element": "earth"
+    },
+    {
+      "id": "84117304-ca13-4e14-8e98-8b700d8fadbe",
+      "name": "фыаыфва",
+      "element": "wind",
+      "description": "выфа"
+    },
+    {
+      "id": "1ea0a865-c396-46b3-8386-a04aeec8c5c4",
+      "name": "фвыа",
+      "description": "авфываыфв",
+      "element": "fire"
     }
   ],
   "filters": [
