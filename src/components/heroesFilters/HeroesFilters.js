@@ -13,9 +13,8 @@ import { changeFilter } from "../../actions";
 
 const HeroesFilters = () => {
 
-    const {filters, activeFilter} = useSelector(state => state);
+    const {filters, activeFilter} = useSelector(state => state.filters);
     const dispatch = useDispatch();
-    console.log(activeFilter)
 
     const buttons = filters.map(item => {
         return (

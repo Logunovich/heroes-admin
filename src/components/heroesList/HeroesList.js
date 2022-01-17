@@ -13,7 +13,15 @@ import Spinner from '../spinner/Spinner';
 // ВСЕ СДЕЛАНО!!!!
 
 const HeroesList = () => {
-    const {filteredHeroes, heroesLoadingStatus} = useSelector(state => state);
+    const filteredHeroes = useSelector(state => {
+        if (state.filters.activeFilter === 'all') {
+            console.log('render')
+            return state.heroes.heroes;
+        } else {
+            return state.heroes.heroes.filter(item => item.element === state.filters.activeFilter)
+        }
+    });
+    const heroesLoadingStatus = useSelector(state => state.heroesLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
     // console.log(heroes)
@@ -61,7 +69,6 @@ const HeroesList = () => {
     }
     
     const elements = renderHeroesList(filteredHeroes);
-    console.log(filteredHeroes)
     return (
         <ul>
             {elements}

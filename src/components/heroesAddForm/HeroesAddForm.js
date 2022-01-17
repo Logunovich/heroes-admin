@@ -19,7 +19,7 @@ const HeroesAddForm = () => {
 
     const [hero, setHero] = useState({id: uuidv4()});
     const dispatch = useDispatch();
-    const {filters} = useSelector(state => state);
+    const {filters} = useSelector(state => state.filters);
     const {request} = useHttp();
 
     const updHero = (obj) => {
