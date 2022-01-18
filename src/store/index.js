@@ -1,6 +1,17 @@
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import heroes from '../reducers/heroes';
 import filtersReducer from '../reducers/filters';
+import ReduxThunk from 'redux-thunk';
+
+const stringMiddleware = () => (next) => (action) => {
+    if (typeof action === 'string') {
+        return next({
+            type: action
+        })
+    }
+    return next(action)
+};
+
 
 const enhancer = (createStore) => (...args) => {
     const store = createStore(...args);
@@ -20,9 +31,13 @@ const enhancer = (createStore) => (...args) => {
 
 const store = createStore( 
                     combineReducers({heroes, filters: filtersReducer}),
-                    compose(
-                        enhancer,
-                        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-                    ));
+                    compose(applyMiddleware(ReduxThunk, stringMiddleware), 
+                            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+                    
+                    // compose(
+                    //     enhancer,
+                    //     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+                    // )
+                    );
 
 export default store;
