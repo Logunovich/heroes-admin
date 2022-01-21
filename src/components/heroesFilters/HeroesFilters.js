@@ -1,6 +1,6 @@
 import { useSelector, useDispatch} from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
-import { changeFilter } from "../../actions";
+import { changeFilter } from "./filtersSlice";
 
 // Задача для этого компонента:
 // Фильтры должны формироваться на основании загруженных данных
