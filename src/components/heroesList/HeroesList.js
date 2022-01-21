@@ -1,11 +1,12 @@
 import {useHttp} from '../../hooks/http.hook';
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchHeroes, fetchFilters } from '../../actions';
-import { deleteHero } from './heroesSlice'
+import { fetchFilters } from '../../actions';
+
+import { deleteHero, fetchHeroes } from './heroesSlice'
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 
 // Задача для этого компонента:
@@ -51,7 +52,7 @@ const HeroesList = () => {
     }, []);
 
     useEffect(() => {
-        dispatch(fetchHeroes(request))
+        dispatch(fetchHeroes())
 
         // eslint-disable-next-line
     }, []);
